@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, "pd.read_csv"APL_Logistics.csv.gz")
+DATA_FILE = os.path.join(BASE_DIR, "DATA_FILE = os.path.join(BASE_DIR, "APL_Logistics.csv.gz")
 MODEL_FILE = os.path.join(BASE_DIR, "late_delivery_model.joblib")
 PREDICTIONS_FILE = os.path.join(
     BASE_DIR, "late_delivery_risk_predictions.csv"
