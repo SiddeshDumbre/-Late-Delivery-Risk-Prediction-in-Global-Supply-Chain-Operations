@@ -1,2 +1,152 @@
-# -Late-Delivery-Risk-Prediction-in-Global-Supply-Chain-Operations
-Developed a machine learning project to predict late delivery risks in global supply chain operations using Python. Analyzed 180,519 order records, built a predictive model, and created a dashboard to identify high-risk shipments and support data-driven logistics decisions.
+# Machine Learning-Based Late Delivery Risk Prediction in Global Supply Chain Operations
+
+## Project Overview
+
+This project develops a machine learning solution to identify potential late-delivery risks in global supply chain operations using the APL Logistics dataset.
+
+The project uses a Logistic Regression classification pipeline to estimate delivery risk and supports shipment monitoring through an interactive Streamlit dashboard.
+
+The objective is to help logistics teams identify potentially risky orders, prioritize monitoring, and make more informed operational decisions.
+
+## Project Objectives
+
+- Analyze order and shipment data to understand delivery performance.
+- Develop a machine learning classification model for late-delivery risk prediction.
+- Evaluate model performance using standard classification metrics.
+- Categorize orders into high-, medium-, and low-risk groups.
+- Build an interactive dashboard for delivery analysis and risk assessment.
+
+## Dataset
+
+The project uses the APL Logistics dataset containing order, product, customer, market, and shipping-related information.
+
+- Total dataset records: 180,519 orders
+- Target variable: `Late_delivery_risk`
+- Target classes: On-time delivery risk label (0) and late-delivery risk label (1)
+
+The model evaluation and corrected prediction results cover 36,104 orders.
+
+## Tools and Technologies
+
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Streamlit
+- Matplotlib and/or Plotly, depending on the libraries used in the dashboard
+- Joblib
+- Jupyter Notebook
+
+## Project Workflow
+
+1. Load and explore the logistics dataset.
+2. Prepare the data for machine learning.
+3. Process the required input features.
+4. Train a Logistic Regression classification pipeline.
+5. Generate delivery-risk predictions.
+6. Evaluate predictions using classification metrics.
+7. Categorize orders by predicted risk.
+8. Present delivery performance and risk insights through a Streamlit dashboard.
+
+## Model Evaluation
+
+The reported evaluation uses a classification threshold of 0.40 on 36,104 evaluated orders.
+
+| Metric | Result |
+|---|---:|
+| Accuracy | 68.66% |
+| Precision | 77.43% |
+| Recall | 60.47% |
+| F1 Score | 67.91% |
+| ROC-AUC | 73.15% |
+
+These results provide a baseline for assessing the model's ability to distinguish between delivery-risk outcomes. The model does not identify every late delivery, so predictions should be treated as decision-support information rather than guaranteed outcomes.
+
+## Prediction Results
+
+The corrected prediction file contains the following risk categories:
+
+| Risk Category | Number of Orders |
+|---|---:|
+| High Risk | 12,584 |
+| Medium Risk | 23,410 |
+| Low Risk | 110 |
+| **Total** | **36,104** |
+
+These categories can help operations teams prioritize shipment monitoring. Risk categories represent model-based estimates and should not be interpreted as confirmed delivery outcomes.
+
+## Streamlit Dashboard Features
+
+The dashboard contains four main sections:
+
+1. **Delivery Performance Overview** — summarizes total orders, late orders, on-time orders, and historical delivery performance.
+2. **Order Risk Prediction** — estimates the late-delivery risk of an individual order based on the selected inputs.
+3. **Region & Shipping Analysis** — explores historical delivery patterns across regions and shipping modes.
+4. **Operations Action Panel** — presents risk summaries and recommendations to support operational review.
+
+## Business Recommendations
+
+- Prioritize monitoring for orders classified as high risk.
+- Investigate recurring delivery issues across regions and shipping methods.
+- Improve shipment scheduling and logistics coordination.
+- Select prediction thresholds based on the relative costs of missed delays and unnecessary alerts.
+- Monitor model performance as new shipment data becomes available.
+
+## How to Run the Project
+
+### 1. Install Python dependencies
+
+Open a terminal in the project folder and install the required libraries. For example:
+
+```bash
+pip install pandas numpy scikit-learn streamlit joblib matplotlib plotly
+```
+
+Install only the libraries required by your actual application; if your project uses other plotting libraries, install those as well.
+
+### 2. Open the project folder
+
+Navigate to the folder containing `app.py` and the saved model files.
+
+### 3. Launch the dashboard
+
+Run:
+
+```bash
+streamlit run app.py
+```
+
+Streamlit will provide a local URL to open the dashboard in your browser.
+
+**Important:** Keep the required dataset and saved model files in the locations expected by `app.py`. The application will not run correctly if required files or dependencies are missing.
+
+## Project Files
+
+The project folder includes the following files, where available:
+
+- `app.py` — Streamlit dashboard application.
+- `APL_Logistics.csv` — source dataset.
+- `late_delivery_model.joblib` — saved machine learning pipeline and related model configuration.
+- `late_delivery_risk_predictions.csv` — corrected prediction results.
+- `threshold_comparison.csv` — prediction-threshold comparison results.
+- `final_business_insights.csv` — summarized business insights.
+- `Untitled.ipynb` — Jupyter Notebook used during development.
+
+## Limitations and Future Improvements
+
+- Improve feature engineering and data preprocessing.
+- Compare Logistic Regression with additional classification algorithms.
+- Tune the prediction threshold according to business priorities.
+- Validate performance on an independent dataset and monitor for data drift.
+- Review the model's false positives and false negatives before operational deployment.
+
+## Conclusion
+
+This project demonstrates how machine learning can support delivery-risk assessment in global supply chain operations. The model and interactive dashboard provide a foundation for identifying potentially risky shipments and prioritizing operational monitoring.
+
+Further validation and improvement are recommended before the model is used for production decisions.
+
+---
+
+**Project Type:** Machine Learning / Supply Chain Analytics  
+**Model:** Logistic Regression Classification Pipeline  
+**Dashboard:** Streamlit
